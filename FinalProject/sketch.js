@@ -7,6 +7,7 @@ let headX = 310;
 
 function preload() {
   // Load the image files.
+  sky =loadImage("Sky.png");
   leye = loadImage("LeftEye.png");
   reye = loadImage("RightEye.png");
   rbody = loadImage("Body.png");
