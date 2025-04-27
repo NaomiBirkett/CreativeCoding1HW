@@ -1,3 +1,4 @@
+let sky;
 let leye;
 let reye;
 let rbody;
@@ -21,6 +22,7 @@ function setup() {
   imageMode(CENTER);
 
   // Resize the images.
+  sky.resize(668,956);
   leye.resize(37, 35);
   reye.resize(36, 35);
   rbody.resize(668, 956);
@@ -29,6 +31,9 @@ function setup() {
 
 function draw() {
   background(52, 175, 209);
+
+  //Add the sky
+  image(sky,334,478);
 
   // Draw the robot
   image(rbody,320,500);
