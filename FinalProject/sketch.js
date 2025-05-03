@@ -91,17 +91,18 @@ function draw()
     {
         yspeed *= -1;
     }
-   
+  }
+
   // open the door and reveal images  
-  if (mouseIsPressed) 
-    {
+function mousePressed()
+  {
     index = index + 1;
     
     if (index == 4) 
       {
       index = 0;
       }
-    }
+  
     
     image(lredeye, 254,140);
     image(rredeye, 343,146);
