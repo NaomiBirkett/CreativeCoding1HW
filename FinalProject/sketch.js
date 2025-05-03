@@ -82,7 +82,7 @@ function draw()
 
     // Music credit
     fill(75, 144, 163);
-    text("Music: Intimidating Canvas by Juno Kids - https://soundcloud.com/user-217364399", 20, 20);
+    text("Music: Intimidating Canvas by Juno Kids", 20, 20);
 
     // Draw the robot
     for(i = 0; i < rbody.length; i++)
