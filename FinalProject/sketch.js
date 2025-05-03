@@ -4,10 +4,8 @@ let rhead;
 let rbody = [];
 let index = 0;
 
-let leye;
-let reye;
-let rredeye;
-let lredeye;
+let eyes = [];
+let index1 = 0;
 
 let dooropen;
 
@@ -29,10 +27,10 @@ function preload()
     rbody[2] = loadImage('SwirlTorso.png');
     rbody[3] = loadImage('UnicornTorso.png');
 
-    leye = loadImage('LeftEye.png');
-    reye = loadImage('RightEye.png');
-    rredeye = loadImage('RedRightEye.png');
-    lredeye = loadImage('RedLeftEye.png');
+    eyes[0] = loadImage('Eyes.png');
+    eyes[1] = loadImage('RedEyes.png');
+    eyes[2] = loadImage('BlueEyes.png');
+    eyes[3] = loadImage('YellowEyes.png');
     
     // Animate door opening
     dooropen = loadImage('DoorOpen.gif');
@@ -67,10 +65,10 @@ function setup()
     rbody[2].resize(668, 956);
     rbody[3].resize(668, 956);
 
-    leye.resize(37, 35);
-    reye.resize(36, 35);
-    lredeye.resize(45, 44);
-    rredeye.resize(44, 48);
+    eyes[0].resize(135, 49);
+    eyes[1].resize(137, 51);
+    eyes[2].resize(137, 51);
+    eyes[3].resize(137, 51);
     
     dooropen.resize(112,110);
   }
@@ -86,13 +84,16 @@ function draw()
 
     // Draw the robot
     for(i = 0; i < rbody.length; i++)
-    {
-    image(rbody[index],320,500);
-    }
+      {
+      image(rbody[index],320,500);
+      }
     
     image(rhead,headX,headY);
-    image(leye,256,140);
-    image(leye,345,145);
+    
+    for(i = 0; i < eyes.length; i++)
+      {
+      image(eyes[index1],300,144);
+      }
     
     image(dooropen,305,324);
   
@@ -113,15 +114,18 @@ function draw()
 function mousePressed()
   {
     index = index + 1;
+    index1 = index1 + 1;
     
     if (index == 4) 
       {
       index = 0;
       }
-  
     
-    image(lredeye, 254,140);
-    image(rredeye, 343,146);
+    if (index1 == 4)
+      {
+        index1 = 0;
+      }
+
     image(dooropen,305,324);
     dooropen.setFrame(0);
     dooropen.play();
