@@ -118,8 +118,7 @@ function mousePressed()
       {
       index = 0;
       }
-  
-    
+
     image(lredeye, 254,140);
     image(rredeye, 343,146);
     image(dooropen,305,324);
