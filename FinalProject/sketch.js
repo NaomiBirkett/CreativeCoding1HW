@@ -15,36 +15,33 @@ let headY = 150;
 let xspeed = 0.25;
 let yspeed = 0.15;
 
-let music;
+let myMusic;
 
 function preload() {
   // Load the image files
-  sky = loadImage("Sky.jpg");
-  leye = loadImage("LeftEye.png");
-  reye = loadImage("RightEye.png");
-  rbody[0] = loadImage("HeartTorso.png");
-  rbody[1] = loadImage("RabbitTorso.png");
-  rbody[2] = loadImage("SwirlTorso.png");
-  rbody[3] = loadImage("UnicornTorso.png");
-  rhead = loadImage("Head.png");
-  rredeye = loadImage("RedRightEye.png");
-  lredeye = loadImage("RedLeftEye.png");
+  sky = loadImage('Sky.jpg');
+  leye = loadImage('LeftEye.png');
+  reye = loadImage('RightEye.png');
+  rbody[0] = loadImage('HeartTorso.png');
+  rbody[1] = loadImage('RabbitTorso.png');
+  rbody[2] = loadImage('SwirlTorso.png');
+  rbody[3] = loadImage('UnicornTorso.png');
+  rhead = loadImage('Head.png');
+  rredeye = loadImage('RedRightEye.png');
+  lredeye = loadImage('RedLeftEye.png');
   
   // Animate door opening
-  dooropen = loadImage("DoorOpen.gif");
+  dooropen = loadImage('DoorOpen.gif');
   
   // Music
-  music = loadSound("IntimidatingCanvas.wav");
+  myMusic = loadSound('IntimidatingCanvas.wav');
 }
   
 function setup() {
   // Set canvas
   createCanvas(668,956);
 
-  // Play music
-  music.play();
-  
-  // Position images 
+ // Position images 
   imageMode(CENTER);
   
   // Pause gif by default
@@ -66,6 +63,9 @@ function setup() {
 function draw() {
   background(52, 175, 209);
   image(sky,334,478);
+
+  // Play music
+  mySound.play();
 
   // Draw the robot
   for(i = 0; i < rbody.length; i++){
