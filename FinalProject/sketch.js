@@ -16,6 +16,8 @@ let headY = 150;
 let xspeed = 0.25;
 let yspeed = 0.15;
 
+let mySong;
+
 function preload() 
   {
     // Load the image files
@@ -34,16 +36,26 @@ function preload()
     
     // Animate door opening
     dooropen = loadImage('DoorOpen.gif');
+
+    // Load music - "Intimidating Canvas" by Juno Kids
+    mySong = loadSound('IntimidatingCanvas.wav');
   }
 
 function setup() 
   {
     // Set canvas
     createCanvas(668,956);
+
+    // Music link
+    let link = createA('https://soundcloud.com/user-217364399', 'SoundCloud');
+    link.position(570,10);
   
-   // Position images 
+    // Position images 
     imageMode(CENTER);
-    
+
+    // Play music on loop
+    mySong.loop();
+
     // Pause gif by default
     dooropen.pause();
   
@@ -67,7 +79,11 @@ function draw()
   {
     background(52, 175, 209);
     image(sky,334,478);
-  
+
+    // Music credit
+    fill(75, 144, 163);
+    text("Music: Intimidating Canvas by Juno Kids - https://soundcloud.com/user-217364399", 20, 20);
+
     // Draw the robot
     for(i = 0; i < rbody.length; i++)
     {
