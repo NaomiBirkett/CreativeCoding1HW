@@ -16,7 +16,8 @@ let headY = 150;
 let xspeed = 0.25;
 let yspeed = 0.15;
 
-function preload() {
+function preload() 
+  {
     // Load the image files
     sky = loadImage('Sky.jpg');
     rhead = loadImage('Head.png');
@@ -35,7 +36,8 @@ function preload() {
     dooropen = loadImage('DoorOpen.gif');
   }
 
-function setup() {
+function setup() 
+  {
     // Set canvas
     createCanvas(668,956);
   
@@ -61,12 +63,14 @@ function setup() {
     dooropen.resize(112,110);
   }
 
-function draw() {
+function draw() 
+  {
     background(52, 175, 209);
     image(sky,334,478);
   
     // Draw the robot
-    for(i = 0; i < rbody.length; i++){
+    for(i = 0; i < rbody.length; i++)
+    {
     image(rbody[index],320,500);
     }
     
@@ -78,20 +82,25 @@ function draw() {
   
   // animate head bob
   headX = headX + xspeed;
-  if(headX >= 312 || headX <= 307) {
+  if(headX >= 312 || headX <= 307) 
+    {
         xspeed *= -1;
     }
   headY = headY + yspeed;
-  if(headY >= 151 || headY <= 148) {
+  if(headY >= 151 || headY <= 148) 
+    {
         yspeed *= -1;
     }
    
   // open the door and reveal images  
-  if (mouseIsPressed) {
+  if (mouseIsPressed) 
+    {
     index = index + 1;
     
-    if (index == 4) {
+    if (index == 4) 
+      {
       index = 0;
+      }
     }
     
     image(lredeye, 254,140);
@@ -99,7 +108,7 @@ function draw() {
     image(dooropen,305,324);
     dooropen.setFrame(0);
     dooropen.play();
-    }
-  
   }
+  
+
     
