@@ -52,7 +52,7 @@ function setup()
     imageMode(CENTER);
 
     // Play music on loop
-    mySong.loop();
+    //mySong.loop();
 
     // Pause gif by default
     dooropen.pause();
@@ -113,6 +113,11 @@ function draw()
   // open the door and reveal images  
 function mousePressed()
   {
+    if (!mySong.isPlaying())
+      {
+        mySong.play();
+      }
+      
     index = index + 1;
     index1 = index1 + 1;
     
